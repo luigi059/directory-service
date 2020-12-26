@@ -6,8 +6,8 @@
 .logo{
     background-color: #00adb5;
 }
-.logo h1{
-    color: #eeeeee;
+.logo__text{
+    color: white;
 }
 .navigation__list{
     display: flex;

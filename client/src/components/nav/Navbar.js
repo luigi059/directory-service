@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar() {
 return (
 <header className="header">
-    <span className="logo"><h1>Game Tracker</h1></span>
+    <div className="logo"><h1 className="logo__text">Game Tracker</h1></div>
     <nav className="navigation">
         <ul className="navigation__list">
             <li className="navigation__item">Games</li>
