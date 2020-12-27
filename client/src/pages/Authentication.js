@@ -7,10 +7,10 @@ function Authentication() {
     return(
         <div className="auth">
             <Switch>
-                <Route path={"/auth/register"}>
+                <Route path={"/users/register"}>
                     <Register/>
                 </Route>
-                <Route path={"/auth"}>
+                <Route path={"/users/login"}>
                     <Login/>
                 </Route>
             </Switch>

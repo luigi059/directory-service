@@ -17,7 +17,7 @@ function Login() {
                         Login
                     </button>
                 </div>
-                <p>Don't have an account? Click <span><Link to={"/auth/register"}>here</Link></span>to register</p>
+                <p>Don't have an account? Click <span><Link to={"/users/register"}>here</Link></span>to register</p>
             </form>
         </div>
     );

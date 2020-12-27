@@ -2,7 +2,6 @@ import React from "react";
 import './App.css';
 import Navbar from "./layouts/nav/Navbar";
 import Footer from "./layouts/footer/Footer";
-import Home from "./pages/Home";
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Authentication from "./pages/Authentication";
 
@@ -12,7 +11,7 @@ function App() {
       <div>
         <Navbar/>
         <Switch>
-          <Route path="/auth">
+          <Route path="/users/login">
             <Authentication/>
           </Route>
           <Route path="/">

@@ -1,11 +1,16 @@
-import React from "react";
+import React,{useEffect} from "react";
 import {Link} from "react-router-dom";
 import "./Register.css";
 
-function Register() {
+function Register(props) {
+    state = { }
+    onFormSubmbit = event =>{
+        event.preventDefault();
+        props.onFormSubmbit()
+    }
     return(
         <div className="auth__wrap">
-            <form>
+            <form onSubmit={onFormSubmbit}>
                 <div class="input__wrap">
                     <input class="input" type="text" name="username" placeholder="Username"/>
                 </div>
@@ -17,7 +22,7 @@ function Register() {
                         Register
                     </button>
                 </div>
-                <p>Already registered? Click <span><Link to={"/auth"}>here</Link></span>to sign in</p>
+                <p>Already registered? Click <span><Link to={"/users/register"}>here</Link></span>to sign in</p>
             </form>
         </div>
     );
