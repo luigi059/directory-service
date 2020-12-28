@@ -1,23 +1,30 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 
-function Login() {
+function Login({onFormSubmbit}) {
+    const [username,setUsername] = useState("");
+    const [password,setPassword] = useState("");
+    const onSubmit = event => {
+        event.preventDefault();
+        onFormSubmbit(username,password,"login");
+        console.log("form data passed");
+    }
     return(
         <div className="auth__wrap">
-            <form>
-                <div class="input__wrap">
-                    <input class="input" type="text" name="username" placeholder="Username"/>
+            <form onSubmit={onSubmit}>
+                <div className="input__wrap">
+                    <input className="input" type="text" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)}/>
                 </div>
                 <div className="input__wrap">
-                    <input className="input" type="password" name="password" placeholder="Password"/>
+                    <input className="input" type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
                 </div>
-                <div class="auth__form__btn-wrap">
-                    <button class="auth__form__btn">
+                <div className="auth__form__btn-wrap">
+                    <button className="auth__form__btn" type="submit">
                         Login
                     </button>
                 </div>
-                <p>Don't have an account? Click <span><Link to={"/users/register"}>here</Link></span>to register</p>
+                <p>Don't have an account? Click <span><Link to={"/auth/register"}>here</Link></span>to register</p>
             </form>
         </div>
     );

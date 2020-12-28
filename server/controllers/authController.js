@@ -18,6 +18,9 @@ const createSendToken = (user, statusCode, req, res) => {
             user
         }
     });
+    
+    // Remove password from output
+    user.password = undefined;
 }
 
 exports.register = async (req,res,next) => {
@@ -40,4 +43,5 @@ exports.login = async (req, res, next) => {
     }
     // 3) If everything ok, send token to client
     createSendToken(user, 200, req, res);
+    console.log("login success");
 };

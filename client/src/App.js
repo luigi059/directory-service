@@ -11,15 +11,14 @@ function App() {
       <div>
         <Navbar/>
         <Switch>
-          <Route path="/users/login">
+          <Route path="/auth">
             <Authentication/>
           </Route>
           <Route path="/">
-            {/* <Home/> */}
+          {/* <Home/> */}
           </Route>
         </Switch>
         <Footer/>
-    {/*       <GameList data={data}/> */}
       </div>
     </Router>
   );    

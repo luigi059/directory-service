@@ -1,28 +1,30 @@
-import React,{useEffect} from "react";
+import React,{useState} from "react";
 import {Link} from "react-router-dom";
 import "./Register.css";
 
-function Register(props) {
-    state = { }
-    onFormSubmbit = event =>{
+function Register({onFormSubmbit}) {
+    const [username,setUsername] = useState("");
+    const [password,setPassword] = useState("");
+    const onSubmit = event => {
         event.preventDefault();
-        props.onFormSubmbit()
+        onFormSubmbit(username,password,"register");
+        console.log("form data passed");
     }
     return(
         <div className="auth__wrap">
-            <form onSubmit={onFormSubmbit}>
+            <form onSubmit={onSubmit}>
                 <div class="input__wrap">
-                    <input class="input" type="text" name="username" placeholder="Username"/>
+                    <input class="input" type="text" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)}/>
                 </div>
                 <div className="input__wrap">
-                    <input className="input" type="password" name="password" placeholder="Password"/>
+                    <input className="input" type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
                 </div>
-                <div class="auth__form__btn-wrap">
-                    <button class="auth__form__btn">
+                <div className="auth__form__btn-wrap">
+                    <button className="auth__form__btn" type="submit">
                         Register
                     </button>
                 </div>
-                <p>Already registered? Click <span><Link to={"/users/register"}>here</Link></span>to sign in</p>
+                <p>Already registered? Click <span><Link to={"/auth"}>here</Link></span>to sign in</p>
             </form>
         </div>
     );
