@@ -1,19 +1,20 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import "./Navbar.css";
+import AuthOptions from "../../auth/AuthOption";
+import "./Header.css";
 
-function Navbar() {
+function Header() {
 return (
 <header className="header">
-    <div className="logo"><h1 className="logo__text">Game Tracker</h1></div>
+    <h1 className="logo__text">Game Tracker</h1>
     <nav className="navigation">
         <ul className="navigation__list">
             <li className="navigation__item"><Link to="/">Games</Link></li>
             <li className="navigation__item">Favourites</li>
-            <li className="navigation__item"><Link to="/auth">Log In</Link></li>
         </ul>
     </nav>
+    <AuthOptions />
 </header>
     );
 }   
-export default Navbar;
+export default Header;

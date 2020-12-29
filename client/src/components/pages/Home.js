@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from "react";
-import GameList from "../components/gamelist/GameList";
-import Searchbar from "../components/searchbar/Searchbar";
+import GameList from "../gamelist/GameList";
+import Searchbar from "../searchbar/Searchbar";
 import axios from "axios";
 
 function Home() {
