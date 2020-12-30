@@ -5,12 +5,12 @@ import axios from "axios";
 
 function Home() {
     const [data,setData] = useState([]);
+    const [nextUrl,setNextUrl] =useState("");
 
     useEffect(()=>{
         request();
     },[])
     const request = async ()=> {
-        console.log("request called")
         const response = await axios.get('https://rawg-video-games-database.p.rapidapi.com/games',
         {
         headers:{
@@ -19,12 +19,26 @@ function Home() {
         }
         });
         setData(response.data.results);
+        setNextUrl(response.data.next);
+    }
+    const next = async ()=>{
+        const response = await axios.get(nextUrl,{});
+        setData(response.data.results);
+        setNextUrl(response.data.next);
+    }
+    const onSubmit = async search =>{
+        console.log("search is working!")
+        const response = await axios.get(`https://api.rawg.io/api/games?search=${search}&search_precise=true`,{});
+        setData(response.data.results);
     }
     
     return(
         <div>
-            <Searchbar/>
+            <Searchbar onFormSubmit={onSubmit}/>
             <GameList data={data}/>
+            <div>
+                <button onClick={next}>next</button>
+            </div>
         </div>
     );
 }
