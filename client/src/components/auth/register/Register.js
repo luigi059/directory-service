@@ -11,6 +11,7 @@ function Register() {
     const [error, setError] = useState("");
     const {setUserData} = useContext(UserContext);
     const history = useHistory();
+
     const submit = async (e) => {
         e.preventDefault();
     

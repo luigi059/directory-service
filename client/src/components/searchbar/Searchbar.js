@@ -5,7 +5,6 @@ function Searchbar({onFormSubmit}) {
     const [search,setSearch] = useState("");
     
     const onSubmit = event => {
-        console.log("hello from searchbar!")
         event.preventDefault();
         onFormSubmit(search);
     }

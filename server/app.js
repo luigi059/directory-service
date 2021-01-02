@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 const userRouter = require("./routes/userRoute");
+const gameRouter = require("./routes/gameRoute");
 
 // tells the location of our env file
 dotenv.config({ path: './config.env' });
@@ -47,6 +48,7 @@ app.get("/", (req, res) => {
 });
 // routes
 app.use('/users', userRouter);
+app.use("/games", gameRouter);
 
 // Configure our server to listen on the port defiend by our port variable
 app.listen(port, () => console.log(`BACK_END_SERVICE_PORT: ${port}`));
