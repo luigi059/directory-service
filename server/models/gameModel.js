@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 const gameSchema = new mongoose.Schema({
     title:String,
-    imageUrl:String,
-    genres:[]
+    imageUrl:String
 });
 
 const Game = mongoose.model("Game",gameSchema);

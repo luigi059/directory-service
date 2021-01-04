@@ -8,6 +8,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/auth/login/Login";
 import Register from "./components/auth/register/Register";
 import UserContext from "./components/context/UserContext";
+import Favourite from "./components/pages/Favourite";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -49,6 +50,7 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/favourites" component={Favourite} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
         </Switch>

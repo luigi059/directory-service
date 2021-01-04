@@ -12,7 +12,6 @@ function GameItem({data}) {
     const [user,setUser] = useState("");
     const [gameName,setGameName] = useState("");
     const [gameImageUrl,setGameImageUrl] = useState("");
-    const [gameGenre] = useState([]);
     const history = useHistory();
 
     const onSubmit = async()=> {
@@ -22,15 +21,11 @@ function GameItem({data}) {
         setUser(userData.user);
         setGameName(data.name);
         setGameImageUrl(data.background_image);
-        for (let index = 0; index < data.genres.length; index++) {
-            const genre = data.genres[index];
-            gameGenre.push(genre.name);
-        }
     }
 
     const saveGame = async()=>{
         try{
-            const newGame = {user,gameName,gameImageUrl,gameGenre}
+            const newGame = {user,gameName,gameImageUrl}
             await axios.post("http://localhost:5000/games/save", newGame);
         } catch (err) {
             err.response.data.msg && setError(err.response.data.msg);
@@ -47,6 +42,9 @@ function GameItem({data}) {
 
     return (
         <div className="list__item">
+            {error && (
+                <ErrorNotice message={error} clearError={() => setError(undefined)} />
+            )}
             <img className="item__image" alt={data.name} src={data.background_image}/>
             <div className="content">
                 <h2>{data.name}</h2>

@@ -10,7 +10,7 @@ return (
     <nav className="navigation">
         <ul className="navigation__list">
             <li className="navigation__item"><Link to="/">Games</Link></li>
-            <li className="navigation__item">Favourites</li>
+            <li className="navigation__item"><Link to="/favourites">Favourites</Link></li>
         </ul>
     </nav>
     <AuthOptions />

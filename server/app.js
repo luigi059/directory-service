@@ -42,12 +42,9 @@ app.use((req, res, next) => {
     console.log(`Request_Endpoint: ${req.method} ${req.url}`);
     next();
 });
-// simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to the backend!" });
-});
+
 // routes
-app.use('/users', userRouter);
+app.use("/users", userRouter);
 app.use("/games", gameRouter);
 
 // Configure our server to listen on the port defiend by our port variable
