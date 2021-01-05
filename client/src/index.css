@@ -16,3 +16,65 @@ html {
 body{
   min-height: 100vh;
 }
+
+/* Header */
+.header{
+  display: flex;
+  height: 5rem;
+  background-color: #222831;
+  border-bottom: 1px solid grey;
+  align-items: center;
+}
+.logo{
+  padding: 0 1rem;
+}
+.logo:hover{
+  cursor: pointer;
+}
+.logo__text{
+  font-family: 'Staatliches', cursive;
+  font-size: 3rem;
+  color: white;
+}
+.navigation {
+  display: flex;
+  height: 100%;
+}
+.navigation button{
+  padding: 0 1rem;
+  background-color: #222831;
+  color: #ffffff;
+  font-size: 1rem;
+  border: none;
+  width: 10rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.navigation button:hover{
+  cursor: pointer;
+  background-color: #393e46;
+}
+header .auth__options {
+  height: 5rem;
+  display: flex;
+  position: absolute;
+  right: 0px;
+}
+header .auth__options button {
+  padding: 0 1rem;
+  background-color: #00adb5;
+  color: #ffffff;
+  border: solid 0 1px grey;
+  font-size: 1rem;
+  width: 10rem;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+header .auth__options button:hover {
+  background-color: #03959c;
+  cursor: pointer;
+
+}

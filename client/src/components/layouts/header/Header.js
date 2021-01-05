@@ -1,17 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import AuthOptions from "../../auth/AuthOption";
-import "./Header.css";
 
 function Header() {
+    const history = useHistory();
+    const games = () => history.push("/");
+    const favourite = () => history.push("/favourites");
+
 return (
 <header className="header">
-    <h1 className="logo__text">Game Tracker</h1>
+    <div className="logo" onClick={games}><h1 className="logo__text">Game Tracker</h1></div>
     <nav className="navigation">
-        <ul className="navigation__list">
-            <li className="navigation__item"><Link to="/">Games</Link></li>
-            <li className="navigation__item"><Link to="/favourites">Favourites</Link></li>
-        </ul>
+        <button onClick={games}>Games</button>
+        <button onClick={favourite}>Favourites</button>
     </nav>
     <AuthOptions />
 </header>
