@@ -1,7 +1,6 @@
 import React,{useState,useContext} from "react";
 import { useHistory,Link } from "react-router-dom";
 import axios from "axios";
-import "./Register.css";
 import UserContext from "../../context/UserContext";
 import ErrorNotice from "../../misc/ErrorNotice";
 
@@ -33,26 +32,27 @@ function Register() {
         }
     };
     return(
-        <div className="auth__wrap">
-            <form onSubmit={submit}>
-                {error && (
-                    <ErrorNotice message={error} clearError={() => setError(undefined)} />
-                )}
-                <div class="input__wrap">
-                    <label htmlFor="register__password">Password</label>
-                    <input class="input" type="text" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)}/>
-                </div>
-                <div className="input__wrap">
-                    <label htmlFor="register__password">Password</label>
-                    <input className="input" type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
-                </div>
-                <div className="auth__form__btn-wrap">
-                    <button className="auth__form__btn" type="submit">
-                        Register
-                    </button>
-                </div>
-                <p>Already registered? Click <span><Link to={"/login"}>here</Link></span>to sign in</p>
-            </form>
+        <div className="auth__body">
+            <div className="auth__wrap">
+                <form className="auth__form" onSubmit={submit}>
+                    {error && (
+                        <ErrorNotice message={error} clearError={() => setError(undefined)} />
+                    )}
+                    <div className="auth__title">Register</div>
+                    <div className="input__wrap">
+                        <input className="input" type="text" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)}/>
+                    </div>
+                    <div className="input__wrap">
+                        <input className="input" type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
+                    </div>
+                    <div className="auth__form__btn-wrap">
+                        <button className="auth__form__btn" type="submit">
+                            Register
+                        </button>
+                    </div>
+                    <p>Already registered? Click <span><Link to={"/login"}>here</Link></span> to sign in</p>
+                </form>
+            </div>
         </div>
     );
 }
