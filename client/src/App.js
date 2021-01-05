@@ -49,7 +49,7 @@ function App() {
       <div>
         <Header/>
         <Switch>
-{/*           <Route exact path="/" component={Home} /> */}
+          <Route exact path="/" component={Home} />
           <Route path="/favourites" component={Favourite} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

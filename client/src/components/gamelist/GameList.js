@@ -1,6 +1,5 @@
 import React from "react";
 import GameItem from "./GameItem";
-import "./GameList.css";
 
 function GameList({data}) {
     const renderedList = data.map(data =>{
@@ -12,7 +11,7 @@ function GameList({data}) {
         );
     });
     return (
-        <div className="list">{renderedList}</div>   
+        <div className="list">{renderedList}</div>  
     );
 }
 

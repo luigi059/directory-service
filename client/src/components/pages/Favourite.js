@@ -36,17 +36,19 @@ function Favourite() {
     },[])
     const renderedList = data.map(data=>{
         return(
-            <div className="list__item">
-                <img className="item__image" alt={data.title} src={data.imageUrl}/>
-                <div className="content">
-                    <h2>{data.title}</h2>
+            <div className="list__container">
+                <div className="list__item">
+                    <img className="item__image" alt={data.title} src={data.imageUrl}/>
+                    <div className="content">
+                        <h2>{data.title}</h2>
+                    </div>
                 </div>
             </div>
         )
     })
     return(
-        <div>
-        <h1>Your favourite games</h1>
+        <div className="list__body">
+        <h1 className="favourite__title">Your favourite games</h1>
         <div className="list">{renderedList}</div>
         </div>
     );

@@ -6,7 +6,7 @@ import axios from "axios";
 function Home() {
     const [data,setData] = useState([]);
     const [nextUrl,setNextUrl] =useState("");
-
+    
     useEffect(()=>{
         request();
     },[])
@@ -33,11 +33,11 @@ function Home() {
     }
     
     return(
-        <div>
+        <div className="list__body">
             <Searchbar onFormSubmit={onSubmit}/>
             <GameList data={data}/>
             <div>
-                <button onClick={next}>next</button>
+                <button className="auth__form__btn" onClick={next}>Next Page</button>
             </div>
         </div>
     );

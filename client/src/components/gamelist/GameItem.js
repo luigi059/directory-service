@@ -3,7 +3,6 @@ import {useHistory} from "react-router-dom";
 import axios from "axios";
 import UserContext from "../context/UserContext";
 import ErrorNotice from "../misc/ErrorNotice";
-import "./GameItem.css"
 
 function GameItem({data}) {
     const { userData } = useContext(UserContext);
@@ -41,14 +40,16 @@ function GameItem({data}) {
     },[gameName])
 
     return (
-        <div className="list__item">
-            {error && (
-                <ErrorNotice message={error} clearError={() => setError(undefined)} />
-            )}
-            <img className="item__image" alt={data.name} src={data.background_image}/>
-            <div className="content">
-                <h2>{data.name}</h2>
-                <button onClick={onSubmit}>add</button>
+        <div className="list__container">
+            <div className="list__item">
+                {error && (
+                    <ErrorNotice message={error} clearError={() => setError(undefined)} />
+                )}
+                <img className="item__image" alt={data.name} src={data.background_image}/>
+                <div className="content">
+                    <h2>{data.name}</h2>
+                    <button className="auth__form__btn btn" onClick={onSubmit}>add</button>
+                </div>
             </div>
         </div>
     );  

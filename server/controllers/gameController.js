@@ -23,7 +23,6 @@ exports.save = async(req,res,next) =>{
 }
 exports.getAllGames = async(req,res,next) =>{
     const username = req.param("user");
-    console.log(username);
     const gamer = await User.findOne({username:username});
     res.json(gamer.games);
 }
